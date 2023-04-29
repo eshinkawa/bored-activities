@@ -7,6 +7,21 @@
   min-height: 100vh;
 }
 
+.bored-activity {
+  font-family: Arial, sans-serif;
+
+  h1 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+
+  p {
+    font-size: 18px;
+    margin: 0;
+  }
+}
+
 .description {
   display: inherit;
   justify-content: inherit;
