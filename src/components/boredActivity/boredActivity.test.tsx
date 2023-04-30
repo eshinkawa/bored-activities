@@ -1,5 +1,5 @@
 import { render, screen, waitFor } from '@testing-library/react'
-import BoredActivity from 'src/components/boredActivity'
+import BoredActivity from 'src/components/boredActivity/BoredActivity'
 import useBoredAPI from 'src/hooks/useBoredAPI'
 
 jest.mock('../hooks/useBoredAPI', () => ({

@@ -1,0 +1,41 @@
+$like-color: #4CAF50;
+$dislike-color: #F44336;
+$button-size: 40px;
+
+.card-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  margin-top: 2rem;
+  justify-content: center;
+}
+
+.button {
+  display: inline-block;
+  width: 2 * $button-size;
+  height: $button-size;
+  border-radius: 8%;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  align-content: center;
+  justify-content: center;
+  font-size: 24px;
+  &.like {
+    background-color: transparent;
+    margin-right: 10px;
+    &:hover {
+      background-color: darken($like-color, 10%);
+    }
+  }
+  &.dislike {
+    background-color: transparent;
+    &:hover {
+      background-color: darken($dislike-color, 10%);
+    }
+  }
+  &.active {
+    transform: scale(1.1);
+  }
+}
+

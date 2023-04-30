@@ -1,4 +1,5 @@
 import type { AppProps } from 'next/app'
+import 'src/styles/mixins.scss'
 import 'src/styles/globals.scss'
 
 export default function App({ Component, pageProps }: AppProps) {

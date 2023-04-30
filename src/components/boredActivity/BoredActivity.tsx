@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import styles from './boredActivity.module.scss'
 
 type Activity = {
   activity: string
@@ -20,7 +21,9 @@ const BoredActivity: React.FC = () => {
 
   const handleLike = () => {
     if (activity) {
-      const activities = JSON.parse(window.localStorage.getItem('activities'))
+      const activities = JSON.parse(
+        window.localStorage.getItem('activities') || '[]',
+      )
       if (!activities) {
         window.localStorage.setItem('activities', JSON.stringify([]))
       }
@@ -39,17 +42,28 @@ const BoredActivity: React.FC = () => {
   }
 
   return (
-    <section className="bored-activity">
+    <section className={'bored-activity'}>
       <h1>Feeling Bored?</h1>
-      <p>Here's an activity for you:</p>
+      <p>Here&apos;s an activity for you:</p>
       {activity ? (
         <div>
+          <div className={styles.chip}>{activity.type}</div>
           <h2>{activity.activity}</h2>
           <p>Type: {activity.type}</p>
           <p>Participants: {activity.participants}</p>
           <div>
-            <button onClick={handleLike}>Like</button>
-            <button onClick={handleDislike}>Dislike</button>
+            <button
+              className={`${styles.button} ${styles.like} ${styles.active}`}
+              onClick={handleLike}
+            >
+              👍
+            </button>
+            <button
+              className={`${styles.button} ${styles.dislike}`}
+              onClick={handleDislike}
+            >
+              👎
+            </button>
           </div>
         </div>
       ) : (
